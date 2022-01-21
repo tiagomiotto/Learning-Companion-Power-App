@@ -1,0 +1,15 @@
+<environmentvariabledefinition schemaname="cr767_shared_sharepointonline_90e156c55c9e48659da95f8e231b35f3">
+  <apiid>/providers/microsoft.powerapps/apis/shared_sharepointonline</apiid>
+  <displayname default="Course Checklist">
+    <label description="Course Checklist" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <parameterkey>table</parameterkey>
+  <parentdefinitionid>
+    <schemaname>cr767_shared_sharepointonline_5b0974418a6d475da53c2de7faf5c5bc</schemaname>
+  </parentdefinitionid>
+  <secretstore>0</secretstore>
+  <type>100000004</type>
+</environmentvariabledefinition>
