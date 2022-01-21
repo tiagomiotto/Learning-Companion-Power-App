@@ -15,69 +15,104 @@ jobs:
       RUNNER_DEBUG: 1
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        lfs: true
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
 
-    - name: Pack solution
-      uses: microsoft/powerplatform-actions/pack-solution@v0
-      with:
-        solution-folder: solutions/${{ secrets.solutionname }}
-        solution-file: out/solutions/${{ secrets.solutionname }}.zip
-        solution-type: Unmanaged
+      - name: Pack solution
+        uses: microsoft/powerplatform-actions/pack-solution@v0
+        with:
+          solution-folder: solutions/${{ secrets.solutionname }}
+          solution-file: out/solutions/${{ secrets.solutionname }}.zip
+          solution-type: Unmanaged
 
-    - name: Import solution as unmanaged to build env
-      uses: microsoft/powerplatform-actions/import-solution@v0
-      with:
-        environment-url: ${{ secrets.buildenv }}
-        app-id:  ${{ secrets.powerplatformsp_appid }}
-        client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secrets.tenantid }}
-        solution-file: out/solutions/${{ secrets.solutionname }}.zip
-        force-overwrite: true
-        publish-changes: true
+      - name: Import solution as unmanaged to build env
+        uses: microsoft/powerplatform-actions/import-solution@v0
+        with:
+          environment-url: ${{ secrets.buildenv }}
+          app-id: ${{ secrets.powerplatformsp_appid }}
+          client-secret: ${{ secrets.powerplatformsp_secret }}
+          tenant-id: ${{ secrets.tenantid }}
+          solution-file: out/solutions/${{ secrets.solutionname }}.zip
+          force-overwrite: true
+          publish-changes: true
 
-    - name: Export solution as managed
-      uses: microsoft/powerplatform-actions/export-solution@v0
-      with:
-        environment-url: ${{ secrets.buildenv }}
-        app-id:  ${{ secrets.powerplatformsp_appid }}
-        client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secrets.tenantid }}
-        solution-name: ${{ secrets.solutionname }}
-        managed: true
-        solution-output-file: out/ship/${{ secrets.solutionname }}.zip
+      - name: Export solution as managed
+        uses: microsoft/powerplatform-actions/export-solution@v0
+        with:
+          environment-url: ${{ secrets.buildenv }}
+          app-id: ${{ secrets.powerplatformsp_appid }}
+          client-secret: ${{ secrets.powerplatformsp_secret }}
+          tenant-id: ${{ secrets.tenantid }}
+          solution-name: ${{ secrets.solutionname }}
+          managed: true
+          solution-output-file: out/ship/${{ secrets.solutionname }}.zip
 
-    - name: Upload the ready to ship solution to GH artifact store
-      uses: actions/upload-artifact@v2
-      with:
-        name: managedSolutions
-        path: out/ship/${{ secrets.solutionname }}.zip
+      - name: Upload the ready to ship solution to GH artifact store
+        uses: actions/upload-artifact@v2
+        with:
+          name: managedSolutions
+          path: out/ship/${{ secrets.solutionname }}.zip
 
   release-to-staging:
-    needs: [ convert-to-managed ]
+    needs: [convert-to-managed]
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        lfs: true
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
 
-    - name: Fetch the ready to ship solution from GH artifact store
-      uses: actions/download-artifact@v2
-      with:
-        name: managedSolutions
-        path: out/release/
-    
-    - name: Import solution to prod env
-      uses: microsoft/powerplatform-actions/import-solution@v0
-      with:
-        environment-url: ${{ secrets.productionenv }}
-        app-id:  ${{ secrets.powerplatformsp_appid }}
-        client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secrets.tenantid }}
-        solution-file: out/release/${{ secrets.solutionname }}.zip
-        force-overwrite: true
-        publish-changes: true
+      - name: Fetch the ready to ship solution from GH artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: managedSolutions
+          path: out/release/
+
+      - name: Import solution to prod env
+        uses: microsoft/powerplatform-actions/import-solution@v0
+        with:
+          environment-url: ${{ secrets.productionenv }}
+          app-id: ${{ secrets.powerplatformsp_appid }}
+          client-secret: ${{ secrets.powerplatformsp_secret }}
+          tenant-id: ${{ secrets.tenantid }}
+          solution-file: out/release/${{ secrets.solutionname }}.zip
+          force-overwrite: true
+          publish-changes: true
+
+      - name: Push managed solution zip to repo
+        uses: EndBug/add-and-commit@v8 # You can change this to use a specific version.
+        with:
+          add: out/release/${{ secrets.solutionname }}.zip
+          # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
+          # Default: '.'
+          cwd: "."
+
+          # Determines the way the action fills missing author name and email. Three options are available:
+          # - github_actor -> UserName <UserName@users.noreply.github.com>
+          # - user_info -> Your Display Name <your-actual@email.com>
+          # - github_actions -> github-actions <email associated with the github logo>
+          # Default: github_actor
+          default_author: github_actor
+
+          # The message for the commit.
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: "New version of the solution"
+
+          # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
+          # - ignore -> errors will be logged but the step won't fail
+          # - exitImmediately -> the action will stop right away, and the step will fail
+          # - exitAtEnd -> the action will go on, every pathspec error will be logged at the end, the step will fail.
+          # Default: ignore
+          pathspec_error_handling: ignore
+
+          # Arguments for the git pull command. Use NO-PULL to avoid the action pulling at all.
+          # Default: '--no-rebase'
+          pull: "NO-PULL"
+
+          # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+          # Default: true
+          push: true
+
