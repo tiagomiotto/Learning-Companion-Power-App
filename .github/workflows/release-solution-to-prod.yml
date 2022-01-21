@@ -29,7 +29,7 @@ jobs:
     - name: Import solution as unmanaged to build env
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: ${{ secrets.productionenv }}
+        environment-url: ${{ secrets.buildenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
         tenant-id: ${{ secrets.tenantid }}
@@ -40,7 +40,7 @@ jobs:
     - name: Export solution as managed
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
-        environment-url: ${{ secrets.productionenv }}
+        environment-url: ${{ secrets.buildenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
         tenant-id: ${{ secrets.tenantid }}
