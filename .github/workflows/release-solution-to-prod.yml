@@ -32,7 +32,7 @@ jobs:
         environment-url: ${{ secrets.productionenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
         solution-file: out/solutions/${{ secrets.solutionname }}.zip
         force-overwrite: true
         publish-changes: true
@@ -43,7 +43,7 @@ jobs:
         environment-url: ${{ secrets.productionenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
         solution-name: ${{ secrets.solutionname }}
         managed: true
         solution-output-file: out/ship/${{ secrets.solutionname }}.zip
@@ -77,7 +77,7 @@ jobs:
         environment-url: ${{ secrets.productionenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
         solution-file: out/release/${{ secrets.solutionname }}.zip
         force-overwrite: true
         publish-changes: true
