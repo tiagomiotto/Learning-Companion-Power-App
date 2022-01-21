@@ -92,7 +92,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           lfs: true
-    
+      - name: Fetch the ready to ship solution from GH artifact store
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ secrets.solutionname }}_managed
+          path: out/release/
+      
       - name: Push managed solution zip to repo
         uses: EndBug/add-and-commit@v8.0.0 # You can change this to use a specific version.
         with:
