@@ -1,0 +1,12 @@
+<environmentvariabledefinition schemaname="cr767_shared_sharepointonline_5b0974418a6d475da53c2de7faf5c5bc">
+  <apiid>/providers/microsoft.powerapps/apis/shared_sharepointonline</apiid>
+  <displayname default="LearningHQ">
+    <label description="LearningHQ" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <parameterkey>dataset</parameterkey>
+  <secretstore>0</secretstore>
+  <type>100000004</type>
+</environmentvariabledefinition>
