@@ -82,8 +82,19 @@ jobs:
           force-overwrite: true
           publish-changes: true
 
+  push-solution-file-to-source-control:
+    needs: [release-to-staging]
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+    
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+    
       - name: Push managed solution zip to repo
-        uses: EndBug/add-and-commit@v8 # You can change this to use a specific version.
+        uses: EndBug/add-and-commit@v8.0.0 # You can change this to use a specific version.
         with:
           add: out/release/${{ secrets.solutionname }}.zip
           # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
