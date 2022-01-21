@@ -29,7 +29,7 @@ jobs:
     - name: publish-solution
       uses: microsoft/powerplatform-actions/publish-solution@v0
       with:
-        solution-file: ${{ secrets.learningapp }}
+        solution-file: ${{ secrets.solutionname }}
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
@@ -42,21 +42,21 @@ jobs:
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
         tenant-id: ${{ secret.tenantid }}
-        solution-name: ${{ secrets.learningapp }}
-        solution-output-file: out/exported/${{ secrets.learningapp }}.zip
+        solution-name: ${{ secrets.solutionname }}
+        solution-output-file: out/exported/${{ secrets.solutionname }}.zip
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@v0
       with:
-        solution-file: out/exported/${{ secrets.learningapp }}.zip
-        solution-folder: out/solutions/${{ secrets.learningapp }}
+        solution-file: out/exported/${{ secrets.solutionname }}.zip
+        solution-folder: out/solutions/${{ secrets.solutionname }}
         solution-type: 'Unmanaged'
         overwrite-files: true
 
     - name: branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
-        solution-folder: out/solutions/${{ secrets.learningapp }}
-        solution-target-folder: solutions/${{ secrets.learningapp }}
+        solution-folder: out/solutions/${{ secrets.solutionname }}
+        solution-target-folder: solutions/${{ secrets.solutionname }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
