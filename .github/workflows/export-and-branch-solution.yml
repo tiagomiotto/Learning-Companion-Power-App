@@ -15,11 +15,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         lfs: true
-    - name: powerplatform-actions
-      uses: microsoft/powerplatform-actions@0.5.1
 
     - name: who-am-i action
-      uses: microsoft/powerplatform-actions/who-am-i@v0
+      uses:  microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
@@ -27,7 +25,7 @@ jobs:
         tenant-id: ${{ secrets.tenantid }}
     
     - name: publish-solution
-      uses: microsoft/powerplatform-actions/publish-solution@v0
+      uses: microsoft/powerplatform-actions/publish-solution@0.4.0
       with:
         solution-file: ${{ secrets.solutionname }}
         environment-url: ${{ secrets.devenv }}
@@ -36,7 +34,7 @@ jobs:
         tenant-id: ${{ secrets.tenantid }}
     
     - name: export-solution action
-      uses: microsoft/powerplatform-actions/export-solution@v0
+      uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
@@ -46,7 +44,7 @@ jobs:
         solution-output-file: out/exported/${{ secrets.solutionname }}.zip
 
     - name: unpack-solution action
-      uses: microsoft/powerplatform-actions/unpack-solution@v0
+      uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
       with:
         solution-file: out/exported/${{ secrets.solutionname }}.zip
         solution-folder: out/solutions/${{ secrets.solutionname }}
