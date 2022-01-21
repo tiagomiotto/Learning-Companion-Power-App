@@ -1,24 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>cr767_learninguserportalbasic_057ad</Name>
-  <AppVersion>2022-01-21T11:09:46Z</AppVersion>
+  <AppVersion>2022-01-21T13:09:56Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.21123.25.0</CreatedByClientVersion>
   <MinClientVersion>3.21123.25.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"98afe44e-16cf-4612-892d-26a0cafec6c5","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.21123.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"fbfc88af-11e0-41c0-958e-39fae4ccddb7","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.21123.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(230, 230, 230, 1)</BackgroundColor>
   <DisplayName>Learning User Portal</DisplayName>
   <Description xsi:nil="true"></Description>
   <CommitMessage xsi:nil="true"></CommitMessage>
-  <Publisher xsi:nil="true"></Publisher>
+  <Publisher></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
   <ConnectionReferences>{"5e1d786d-a9eb-4105-9bc0-6d73f2ad3957":{"id":"/providers/microsoft.powerapps/apis/shared_teams","displayName":"Microsoft Teams","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1542/1.0.1542.2635/teams/icon.png","dataSources":["MicrosoftTeams"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"5f79580d-6621-4803-9474-51c6b31666a9":{"id":"/providers/microsoft.powerapps/apis/shared_office365users","displayName":"Office 365 Users","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1542/1.0.1542.2635/office365users/icon.png","dataSources":["Office365Users"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard"},"35802a34-c1b6-43b7-b858-7868b5c1887e":{"id":"/providers/microsoft.powerapps/apis/shared_sharepointonline","displayName":"SharePoint","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/sharepointonline/icon.png","dataSources":["Checklist Confirmations","Course Attendance","Course Checklist","Courses"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{"https://m365x352268.sharepoint.com/sites/LearningHQ-Dev2":{"datasetOverride":{"name":"https://m365x352268.sharepoint.com/sites/LearningHQ-Dev2","environmentVariableName":"cr767_shared_sharepointonline_5b0974418a6d475da53c2de7faf5c5bc"},"dataSources":{"Checklist Confirmations":{"tableName":"c92afae6-bd91-485a-9331-e0a7ef9768fd","tableNameOverride":{"name":"c92afae6-bd91-485a-9331-e0a7ef9768fd","environmentVariableName":"cr767_shared_sharepointonline_61eaf96ba55a4f8da8fb1d547872051a"}},"Course Attendance":{"tableName":"7989a633-dcd9-4be4-9fed-d9ce8f96783c","tableNameOverride":{"name":"7989a633-dcd9-4be4-9fed-d9ce8f96783c","environmentVariableName":"cr767_shared_sharepointonline_d024874cae9b4b3cb71a86f22a14a5b0"}},"Course Checklist":{"tableName":"87216009-e3f7-4414-b679-746d0491fc27","tableNameOverride":{"name":"87216009-e3f7-4414-b679-746d0491fc27","environmentVariableName":"cr767_shared_sharepointonline_90e156c55c9e48659da95f8e231b35f3"}},"Courses":{"tableName":"1e860ff4-d785-4d01-a7a4-bef6ccead2e8","tableNameOverride":{"name":"1e860ff4-d785-4d01-a7a4-bef6ccead2e8","environmentVariableName":"cr767_shared_sharepointonline_e961de0e2bfe4e8aa202795668f03669"}}}}},"apiTier":"Standard","actions":["providers/PowerPlatform.Governance/Operations/Read","providers/PowerPlatform.Governance/Operations/Write","providers/PowerPlatform.Governance/Operations/Delete"]}}</ConnectionReferences>
   <DatabaseReferences>{}</DatabaseReferences>
   <AppComponents>[]</AppComponents>
   <AppComponentDependencies>[]</AppComponentDependencies>
-  <CanConsumeAppPass>1</CanConsumeAppPass>
   <CanvasAppType>0</CanvasAppType>
   <BypassConsent>0</BypassConsent>
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
