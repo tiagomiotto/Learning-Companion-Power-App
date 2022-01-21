@@ -95,7 +95,7 @@ jobs:
       - name: Fetch the ready to ship solution from GH artifact store
         uses: actions/download-artifact@v2
         with:
-          name: ${{ secrets.solutionname }}_managed
+          name: managedSolutions
           path: out/release/
       
       - name: Push managed solution zip to repo
