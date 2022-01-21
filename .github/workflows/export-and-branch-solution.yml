@@ -24,7 +24,7 @@ jobs:
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
     
     - name: publish-solution
       uses: microsoft/powerplatform-actions/publish-solution@v0
@@ -33,7 +33,7 @@ jobs:
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
     
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@v0
@@ -41,7 +41,7 @@ jobs:
         environment-url: ${{ secrets.devenv }}
         app-id:  ${{ secrets.powerplatformsp_appid }}
         client-secret: ${{ secrets.powerplatformsp_secret }}
-        tenant-id: ${{ secret.tenantid }}
+        tenant-id: ${{ secrets.tenantid }}
         solution-name: ${{ secrets.solutionname }}
         solution-output-file: out/exported/${{ secrets.solutionname }}.zip
 
