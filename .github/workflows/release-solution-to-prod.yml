@@ -96,12 +96,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: managedSolutions
-          path: out/release/
-      
+          
       - name: Push managed solution zip to repo
         uses: EndBug/add-and-commit@v8.0.0 # You can change this to use a specific version.
         with:
-          add: out/release/${{ secrets.solutionname }}.zip
+          add: ${{ secrets.solutionname }}_managed.zip
           # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
           # Default: '.'
           cwd: "."
