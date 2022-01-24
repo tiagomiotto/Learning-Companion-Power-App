@@ -96,6 +96,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ secrets.solutionname }}
+          path: release/
           
       - name: Push managed solution zip to repo
         uses: EndBug/add-and-commit@v8.0.0 # You can change this to use a specific version.
