@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2021/03/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.7.3.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-7387AEBC6C85450AB538A36F61B8D4B7">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-7387AEBC6C85450AB538A36F61B8D4B7" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Checklist Confirmations" Description="Who has completed what" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Checklist Confirmations" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Checklist Confirmations/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Checklist Confirmations/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Checklist Confirmations/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{C35A2236-D2DE-4469-B626-2F45BB34F715}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Checklist Confirmations/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="DoneBy" />
+                <FieldRef Name="CheckListID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="ComplianceAssetId" />
+                <FieldRef Name="CourseID" />
+                <FieldRef Name="ID" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="DoneBy" Format="Dropdown" IsModern="TRUE" List="UserInfo" Name="DoneBy" Title="DoneBy" Type="User" UserSelectionMode="0" UserSelectionScope="0" ID="{96ddb4dd-e9d7-42de-b7fb-40de39391237}" SourceID="{{listid:Checklist Confirmations}}" StaticName="DoneBy" ColName="int1" RowOrdinal="0" />
+            <Field CommaSeparator="TRUE" CustomUnitOnRight="TRUE" DisplayName="CheckListID" Format="Dropdown" IsModern="TRUE" Name="CheckListID" Percentage="FALSE" Title="CheckListID" Type="Number" Unit="None" ID="{2e6eec00-fbb8-4b12-9974-ae7218bb6300}" SourceID="{{listid:Checklist Confirmations}}" StaticName="CheckListID" ColName="float1" RowOrdinal="0" />
+            <Field CommaSeparator="TRUE" CustomUnitOnRight="TRUE" DisplayName="CourseID" Format="Dropdown" IsModern="TRUE" Name="CourseID" Percentage="FALSE" Title="CourseID" Type="Number" Unit="None" ID="{4a24085f-5c77-4c51-9112-ac27fad7a337}" SourceID="{{listid:Checklist Confirmations}}" StaticName="CourseID" ColName="float2" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://westeurope0.pushnp.svc.ms/notifications?token=9d522136-0efe-49f1-bb9d-f7b77e144d34" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Course Attendance" Description="Who's registered for which course" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Course Attendance" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Course Attendance/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Course Attendance/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Course Attendance/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{D5EFFB8C-117E-4D65-B78D-8262894CAAA2}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Course Attendance/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="CourseattendanceID" />
+                <FieldRef Name="AssignedUser" />
+                <FieldRef Name="QARole" />
+                <FieldRef Name="QAOrg" />
+                <FieldRef Name="QACountry" />
+                <FieldRef Name="QASpareTimeActivities" />
+                <FieldRef Name="QAMobilePhoneNumber" />
+                <FieldRef Name="BotContacted" />
+                <FieldRef Name="IntroductionDone" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="AssignedUser" Format="Dropdown" IsModern="TRUE" List="UserInfo" Name="AssignedUser" Title="AssignedUser" Type="User" UserSelectionMode="0" UserSelectionScope="0" ID="{9a91ce3b-281f-4e7f-a508-57c1a986dcb1}" SourceID="{{listid:Course Attendance}}" StaticName="AssignedUser" ColName="int1" RowOrdinal="0" />
+            <Field Description="Attendee answer to &quot;role&quot; Q&amp;A" DisplayName="QARole" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QARole" Title="QARole" Type="Text" ID="{8201d18b-c5bf-4967-94f4-ca936dbe3129}" SourceID="{{listid:Course Attendance}}" StaticName="QARole" ColName="nvarchar4" RowOrdinal="0" />
+            <Field Description="Attendee answer to &quot;organisation&quot; Q&amp;A" DisplayName="QAOrg" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QAOrg" Title="QAOrg" Type="Text" ID="{30dcbd08-d6f5-49cf-824d-f52b4253c4af}" SourceID="{{listid:Course Attendance}}" StaticName="QAOrg" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Description="Attendee answer to &quot;country&quot; Q&amp;A" DisplayName="QACountry" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QACountry" Title="QACountry" Type="Text" ID="{31ffb2da-4e7a-4b3e-9b32-8728fbb221d4}" SourceID="{{listid:Course Attendance}}" StaticName="QACountry" ColName="nvarchar6" RowOrdinal="0" />
+            <Field Description="Attendee answer to &quot;what do you do in spare time&quot; Q&amp;A" DisplayName="QASpareTimeActivities" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QASpareTimeActivities" Title="QASpareTimeActivities" Type="Text" ID="{3429bcb5-b02f-4239-afe5-f931c6551a44}" SourceID="{{listid:Course Attendance}}" StaticName="QASpareTimeActivities" ColName="nvarchar7" RowOrdinal="0" />
+            <Field Description="Attendee answer to &quot;mobile phone number&quot; Q&amp;A" DisplayName="QAMobilePhoneNumber" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QAMobilePhoneNumber" Title="QAMobilePhoneNumber" Type="Text" ID="{c03f34f6-5f93-4b79-813e-89ceca90e10f}" SourceID="{{listid:Course Attendance}}" StaticName="QAMobilePhoneNumber" ColName="nvarchar8" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" CommaSeparator="TRUE" CustomUnitOnRight="TRUE" Decimals="0" DisplayName="CourseAttendanceID" Format="Dropdown" Name="CourseattendanceID" Percentage="FALSE" Title="CourseAttendanceID" Type="Number" Unit="None" ID="{7d381273-187f-442a-a20e-aba477515285}" Version="6" StaticName="CourseattendanceID" SourceID="{{listid:Course Attendance}}" ColName="float1" RowOrdinal="0" />
+            <Field Description="Bot has contacted this user" DisplayName="BotContacted" Format="Dropdown" IsModern="TRUE" Name="BotContacted" Title="BotContacted" Type="Boolean" ID="{8731392e-853c-40bc-8004-644d25aa735d}" SourceID="{{listid:Course Attendance}}" StaticName="BotContacted" ColName="bit1" RowOrdinal="0">
+              <Default>1</Default>
+            </Field>
+            <Field DisplayName="IntroductionDone" Format="Dropdown" IsModern="TRUE" Name="IntroductionDone" Title="IntroductionDone" Type="Boolean" ID="{a698440e-ae27-4810-84fd-b6142b7e95c0}" SourceID="{{listid:Course Attendance}}" StaticName="IntroductionDone" ColName="bit2" RowOrdinal="0">
+              <Default>0</Default>
+            </Field>
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://westeurope0.pushnp.svc.ms/notifications?token=9f594d30-5079-444f-8238-a319961e7c75" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Course Checklist" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Course Checklist" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Course Checklist/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Course Checklist/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Course Checklist/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{DCC67C1F-47EA-4CA2-A641-210AAA373796}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Course Checklist/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Module" />
+                <FieldRef Name="AssociatedModule" />
+                <FieldRef Name="Description" />
+                <FieldRef Name="Resourcetouse" />
+                <FieldRef Name="CourseID" />
+                <FieldRef Name="DueDate" />
+                <FieldRef Name="Minutestocomplete" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+            <View Name="{B9CC16C8-7ED8-41E1-AD14-5FB5FAB60BB4}" Type="HTML" DisplayName="id13" Url="{site}/Lists/Course Checklist/id13.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <Where>
+                  <Eq>
+                    <FieldRef Name="CourseID" />
+                    <Value Type="Number">13.0000000000000</Value>
+                  </Eq>
+                </Where>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="AssociatedModule" />
+                <FieldRef Name="CourseID" />
+                <FieldRef Name="ID" />
+                <FieldRef Name="Description" />
+                <FieldRef Name="Resourcetouse" />
+                <FieldRef Name="Module" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{424FD290-C880-40E2-8077-1CDC1C780526}" Type="HTML" DisplayName="Course 1 items" Url="{site}/Lists/Course Checklist/PersonalViews.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Module" />
+                <FieldRef Name="AssociatedModule" />
+                <FieldRef Name="Description" />
+                <FieldRef Name="Resourcetouse" />
+                <FieldRef Name="CourseID" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field CommaSeparator="TRUE" CustomUnitOnRight="TRUE" Decimals="0" DisplayName="CourseID" Format="Dropdown" IsModern="TRUE" Name="CourseID" Percentage="FALSE" Title="CourseID" Type="Number" Unit="None" ID="{9068c356-f249-4670-91b9-50f0da6ed893}" SourceID="{{listid:Course Checklist}}" StaticName="CourseID" ColName="float1" RowOrdinal="0" />
+            <Field DisplayName="Description" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="Description" Title="Description" Type="Text" ID="{c90e3b6e-9081-4876-ba0c-21b78acee443}" SourceID="{{listid:Course Checklist}}" StaticName="Description" ColName="nvarchar4" RowOrdinal="0" />
+            <Field DisplayName="Resource to use" Format="Hyperlink" IsModern="TRUE" Name="Resourcetouse" Title="Resource to use" Type="URL" ID="{3391c4a2-f720-4760-87fc-2ed1cf1487a9}" SourceID="{{listid:Course Checklist}}" StaticName="Resourcetouse" ColName="nvarchar5" RowOrdinal="0" ColName2="nvarchar6" RowOrdinal2="0" />
+            <Field Description="Associated course module for this item" DisplayName="AssociatedModule" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="AssociatedModule" Title="AssociatedModule" Type="Text" ID="{00e87345-deb0-4b85-a1b9-e83c09ef9500}" SourceID="{{listid:Course Checklist}}" StaticName="AssociatedModule" ColName="nvarchar7" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Learning Program" Format="Dropdown" MaxLength="255" Name="Module" Title="Learning Program" Type="Text" ID="{1433e853-0265-4f50-89d2-da54dac73075}" Version="4" StaticName="Module" SourceID="{{listid:Course Checklist}}" ColName="nvarchar8" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Due Date" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="DueDate" Title="Due Date" Type="DateTime" ID="{b95442d0-5d56-4e42-9f6a-ba90e51121d2}" Version="2" StaticName="DueDate" SourceID="{{listid:Course Checklist}}" ColName="datetime1" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" CommaSeparator="TRUE" CustomUnitOnRight="TRUE" DisplayName="Minutes to complete" Format="Dropdown" Name="Minutestocomplete" Percentage="FALSE" Title="Minutes to complete" Type="Number" Unit="None" ID="{5ddba95d-8678-4e91-b36a-d27df28f5a12}" Version="2" StaticName="Minutestocomplete" SourceID="{{listid:Course Checklist}}" ColName="float2" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Security>
+            <pnp:BreakRoleInheritance CopyRoleAssignments="false" ClearSubscopes="false">
+              <pnp:RoleAssignment Principal="{associatedownergroupid}" RoleDefinition="Full Control" />
+              <pnp:RoleAssignment Principal="{associatedvisitorgroupid}" RoleDefinition="Read" />
+              <pnp:RoleAssignment Principal="{associatedmembergroupid}" RoleDefinition="Edit" />
+            </pnp:BreakRoleInheritance>
+          </pnp:Security>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://westeurope0.pushnp.svc.ms/notifications?token=3cb83f72-36a7-4f7f-8294-5c6060225237" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Courses" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Courses" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Courses/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Courses/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Courses/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{F684CE85-18CD-4E94-BF12-3808D8D13F6A}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Courses/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="ID" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="CourseImgBase64" />
+                <FieldRef Name="Start" />
+                <FieldRef Name="End" />
+                <FieldRef Name="WelcomeMessage" />
+                <FieldRef Name="Trainer" />
+                <FieldRef Name="DaysBeforeToSendReminders" />
+                <FieldRef Name="TeamID" />
+                <FieldRef Name="ChannelID" />
+                <FieldRef Name="ImageBase64" />
+                <FieldRef Name="LearnerAppLink" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+              <ViewData />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" Description="Course start date" DisplayName="Start" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="Start" Title="Start" Type="DateTime" ID="{785c4136-1716-4030-b974-d2fb46ffd9be}" Version="2" StaticName="Start" SourceID="{{listid:Courses}}" ColName="datetime1" RowOrdinal="0" />
+            <Field Description="Welcome message for a course" DisplayName="WelcomeMessage" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="WelcomeMessage" Title="WelcomeMessage" Type="Text" ID="{4833f944-5767-4d27-8577-532e9089add3}" SourceID="{{listid:Courses}}" StaticName="WelcomeMessage" ColName="nvarchar4" RowOrdinal="0" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Facilitator" Format="Dropdown" List="UserInfo" Name="Trainer" Title="Facilitator" Type="User" UserDisplayOptions="NamePhoto" UserSelectionMode="0" UserSelectionScope="0" ID="{318cdd02-653a-4add-b0f2-ae3d082daf39}" Version="2" StaticName="Trainer" SourceID="{{listid:Courses}}" ColName="int1" RowOrdinal="0" />
+            <Field CommaSeparator="TRUE" CustomUnitOnRight="TRUE" Decimals="0" DisplayName="DaysBeforeToSendReminders" Format="Dropdown" IsModern="TRUE" Name="DaysBeforeToSendReminders" Percentage="FALSE" Title="DaysBeforeToSendReminders" Type="Number" Unit="None" ID="{b8b822a8-2770-451e-bce6-b49b876bd2bc}" SourceID="{{listid:Courses}}" StaticName="DaysBeforeToSendReminders" ColName="float1" RowOrdinal="0" />
+            <Field Description="When the course finishes" DisplayName="End" FriendlyDisplayFormat="Disabled" Format="DateOnly" IsModern="TRUE" Name="End" Title="End" Type="DateTime" ID="{2c925052-2764-49bd-a6a5-67733092ba08}" SourceID="{{listid:Courses}}" StaticName="End" ColName="datetime2" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="TeamID" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{e855620a-8212-4e79-947d-873cdd4c8667}" SourceID="{{listid:Courses}}" StaticName="TeamID" Name="TeamID" ColName="nvarchar5" RowOrdinal="0" />
+            <Field Type="Text" DisplayName="ChannelID" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" ID="{d6a80a55-0683-4673-ab3e-9dda6a5e010e}" SourceID="{{listid:Courses}}" StaticName="ChannelID" Name="ChannelID" ColName="nvarchar6" RowOrdinal="0" />
+            <Field AppendOnly="FALSE" DisplayName="ImageBase64" Format="Dropdown" IsModern="TRUE" IsolateStyles="FALSE" Name="ImageBase64" RichText="FALSE" RichTextMode="Compatible" Title="ImageBase64" Type="Note" ID="{56d6ccb8-8b1b-485d-9fb8-ee4833bca05d}" SourceID="{{listid:Courses}}" StaticName="ImageBase64" ColName="ntext3" RowOrdinal="0" />
+            <Field DisplayName="LearnerAppLink" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="LearnerAppLink" Title="LearnerAppLink" Type="Text" ID="{e63df1eb-52d7-4df2-84af-60857091476b}" SourceID="{{listid:Courses}}" StaticName="LearnerAppLink" ColName="nvarchar7" RowOrdinal="0" />
+            <Field AppendOnly="FALSE" DisplayName="CourseImgBase64" Format="Dropdown" IsModern="TRUE" IsolateStyles="FALSE" Name="CourseImgBase64" RichText="FALSE" RichTextMode="Compatible" Title="CourseImgBase64" Type="Note" ID="{4ea5bd69-03b2-4f3f-b42c-13367fd398f1}" SourceID="{{listid:Courses}}" StaticName="CourseImgBase64" ColName="ntext2" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://westeurope0.pushnp.svc.ms/notifications?token=96ec5b49-1b4b-4221-afdd-b83cce91197a" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
