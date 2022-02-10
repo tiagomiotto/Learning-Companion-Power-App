@@ -74,7 +74,7 @@ if (($siteExists -eq $null) -and ($siteExistsInRecycleBin -eq $null)) {
 	write-host "Info: Site $($SiteName) Created" -foregroundcolor magenta
 }
 elseif ($siteExists -ne $null){
-    write-host "Site already exists continuing: $($SiteURL) already exists" -foregroundcolor red
+    write-host "Site $($SiteURL) is already created, moving on" -foregroundcolor red
     
 }
 else{
