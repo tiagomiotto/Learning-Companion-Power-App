@@ -5,8 +5,8 @@ name: release-solution-to-prod
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   convert-to-managed:
