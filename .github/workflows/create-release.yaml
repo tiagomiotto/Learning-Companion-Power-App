@@ -71,7 +71,7 @@ jobs:
       
       - name: Upload Release Asset
         id: upload-release-asset 
-        uses: actions/upload-release-asset@vmaster
+        uses: actions/upload-release-asset@master
         env:
          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
