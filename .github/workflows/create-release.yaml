@@ -57,7 +57,7 @@ jobs:
   create-release:
     name: Create Release
     needs: [convert-to-managed]
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
