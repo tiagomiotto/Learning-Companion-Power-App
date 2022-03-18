@@ -64,11 +64,10 @@ jobs:
       
       - name: Create a Release
         id: create_release
-        uses: elgohr/Github-Release-Action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          args: "My message"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
       
       - name: Upload Release Asset
         id: upload-release-asset 
