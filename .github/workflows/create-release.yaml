@@ -64,12 +64,14 @@ jobs:
       
       - name: Create Release
         id: create_release
-        uses: ncipollo/release-action@v1
+        uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          token: ${{ secrets.PAT }}
-          body: "New release"
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
       
       - name: Upload Release Asset
         id: upload-release-asset 
