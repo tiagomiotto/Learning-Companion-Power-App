@@ -65,9 +65,9 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.PAT }} # This token is provided by Actions, you do not need to create your own token
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ GITHUB_TOKEN }}
           body: "New release"
       - name: Upload Release Asset
         id: upload-release-asset 
