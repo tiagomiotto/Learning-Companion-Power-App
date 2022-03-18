@@ -69,7 +69,7 @@ jobs:
           repo_token: "${{ secrets.PAT }}"
           prerelease: false
           automatic_release_tag: latest
-          files: ${{ secrets.solutionname }}.zip
+          files: ${{ secrets.solutionname }}
       
 #       - name: Upload Release Asset
 #         id: upload-release-asset 
