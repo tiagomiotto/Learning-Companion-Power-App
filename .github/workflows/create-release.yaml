@@ -1,0 +1,87 @@
+name: create-release
+# prepare for releasing to prod:
+#   convert solution to managed (using a build PowerPlatform environment for the conversion)
+#   upload the solution to the GitHub artifacts and deploy to the PROD environment
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  convert-to-managed:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Pack solution
+        uses: microsoft/powerplatform-actions/pack-solution@v0
+        with:
+          solution-folder: solutions/${{ secrets.solutionname }}
+          solution-file: out/solutions/${{ secrets.solutionname }}.zip
+          solution-type: Unmanaged
+
+      - name: Import solution as unmanaged to build env
+        uses: microsoft/powerplatform-actions/import-solution@v0
+        with:
+          environment-url: ${{ secrets.buildenv }}
+          app-id: ${{ secrets.powerplatformsp_appid }}
+          client-secret: ${{ secrets.powerplatformsp_secret }}
+          tenant-id: ${{ secrets.tenantid }}
+          solution-file: out/solutions/${{ secrets.solutionname }}.zip
+          force-overwrite: true
+          publish-changes: true
+
+      - name: Export solution as managed
+        uses: microsoft/powerplatform-actions/export-solution@v0
+        with:
+          environment-url: ${{ secrets.buildenv }}
+          app-id: ${{ secrets.powerplatformsp_appid }}
+          client-secret: ${{ secrets.powerplatformsp_secret }}
+          tenant-id: ${{ secrets.tenantid }}
+          solution-name: ${{ secrets.solutionname }}
+          managed: true
+          solution-output-file: out/ship/${{ secrets.solutionname }}.zip
+
+      - name: Upload the ready to ship solution to GH artifact store
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ secrets.solutionname }}
+          path: out/ship/${{ secrets.solutionname }}.zip
+          
+  create-release:
+    name: Create Release
+    needs: [convert-to-managed]
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: out/release/${{ secrets.solutionname }}.zip
+          asset_name: ${{ secrets.solutionname }}.zip
+          asset_content_type: application/zip
