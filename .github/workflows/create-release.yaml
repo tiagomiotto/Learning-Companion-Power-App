@@ -68,6 +68,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
+          automatic_release_tag: latest
       
       - name: Upload Release Asset
         id: upload-release-asset 
