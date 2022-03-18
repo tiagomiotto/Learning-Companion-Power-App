@@ -54,7 +54,7 @@ jobs:
           name: ${{ secrets.solutionname }}
           path: out/ship/${{ secrets.solutionname }}.zip
 
-  release-to-staging:
+  release-to-prod:
     needs: [convert-to-managed]
     runs-on: windows-latest
     env:
@@ -84,7 +84,7 @@ jobs:
 
   create-release:
     name: Create Release
-    needs: [release-to-staging]
+    needs: [convert-to-managed]
     runs-on: windows-latest
     steps:
       - name: Checkout code
