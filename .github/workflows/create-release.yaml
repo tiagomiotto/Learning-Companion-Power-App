@@ -75,7 +75,7 @@ jobs:
           repo_token: "${{ secrets.PAT }}"
           prerelease: false
           automatic_release_tag: latest
-          file: ${{ secrets.solutionname }}
+          files: ${{ secrets.solutionname }}
       
 #       - name: Upload Release Asset
 #         id: upload-release-asset 
