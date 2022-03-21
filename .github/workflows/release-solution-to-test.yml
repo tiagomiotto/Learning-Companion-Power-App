@@ -6,8 +6,8 @@ name: release-solution-to-test
 on:
   workflow_dispatch:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - '!main'
 
 jobs:
   convert-to-managed:
