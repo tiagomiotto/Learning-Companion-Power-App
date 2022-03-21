@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  export-from-dev:
+  export-and-branch-solution:
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
