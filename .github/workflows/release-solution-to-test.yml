@@ -4,8 +4,9 @@ name: release-solution-to-test
 #   upload the solution to the GitHub artifacts and deploy to the Test environment
 
 on:
-  create
-
+  workflow_dispatch:
+  pull_request:
+    branches: [ main ]
 jobs:
   convert-to-managed:
     runs-on: windows-latest
