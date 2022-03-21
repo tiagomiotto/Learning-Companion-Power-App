@@ -4,10 +4,7 @@ name: release-solution-to-test
 #   upload the solution to the GitHub artifacts and deploy to the Test environment
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - '!main'
+  create
 
 jobs:
   convert-to-managed:
