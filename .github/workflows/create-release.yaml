@@ -4,8 +4,10 @@ name: create-release
 #   upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [ main ]
+  workflow_run:
+    workflows: ["release-solution-to-test"]
+    types:
+      - completed
 
 jobs:
   convert-to-managed:
