@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>cr767_learningadmindev_520db</Name>
-  <AppVersion>2022-05-23T09:33:29Z</AppVersion>
+  <AppVersion>2022-05-23T10:19:17Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.22052.25.0</CreatedByClientVersion>
   <MinClientVersion>3.22052.25.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"20220428T093653Z-3.22043.14.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22052.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","sienaVersion":"20220523T093329Z-3.22052.25.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.22052.25","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>rgba(230, 230, 230, 1)</BackgroundColor>
