@@ -69,7 +69,7 @@
             <Field Description="Attendee answer to &quot;mobile phone number&quot; Q&amp;A" DisplayName="QAMobilePhoneNumber" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="QAMobilePhoneNumber" Title="QAMobilePhoneNumber" Type="Text" ID="{c03f34f6-5f93-4b79-813e-89ceca90e10f}" SourceID="{{listid:Course Attendance}}" StaticName="QAMobilePhoneNumber" ColName="nvarchar8" RowOrdinal="0" />
             <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" CommaSeparator="TRUE" CustomUnitOnRight="TRUE" Decimals="0" DisplayName="CourseAttendanceID" Format="Dropdown" Name="CourseattendanceID" Percentage="FALSE" Title="CourseAttendanceID" Type="Number" Unit="None" ID="{7d381273-187f-442a-a20e-aba477515285}" Version="6" StaticName="CourseattendanceID" SourceID="{{listid:Course Attendance}}" ColName="float1" RowOrdinal="0" />
             <Field Description="Bot has contacted this user" DisplayName="BotContacted" Format="Dropdown" IsModern="TRUE" Name="BotContacted" Title="BotContacted" Type="Boolean" ID="{8731392e-853c-40bc-8004-644d25aa735d}" SourceID="{{listid:Course Attendance}}" StaticName="BotContacted" ColName="bit1" RowOrdinal="0">
-              <Default>1</Default>
+              <Default>0</Default>
             </Field>
             <Field DisplayName="IntroductionDone" Format="Dropdown" IsModern="TRUE" Name="IntroductionDone" Title="IntroductionDone" Type="Boolean" ID="{a698440e-ae27-4810-84fd-b6142b7e95c0}" SourceID="{{listid:Course Attendance}}" StaticName="IntroductionDone" ColName="bit2" RowOrdinal="0">
               <Default>0</Default>
