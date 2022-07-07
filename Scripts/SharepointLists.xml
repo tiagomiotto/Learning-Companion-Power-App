@@ -177,6 +177,8 @@
                 <FieldRef Name="ChannelID" />
                 <FieldRef Name="ImageBase64" />
                 <FieldRef Name="LearnerAppLink" />
+                                <FieldRef Name="IntroductionChannel" />
+                <FieldRef Name="IntroductionChannelID" />
               </ViewFields>
               <RowLimit Paged="TRUE">30</RowLimit>
               <Aggregations Value="Off" />
@@ -196,6 +198,9 @@
             <Field AppendOnly="FALSE" DisplayName="ImageBase64" Format="Dropdown" IsModern="TRUE" IsolateStyles="FALSE" Name="ImageBase64" RichText="FALSE" RichTextMode="Compatible" Title="ImageBase64" Type="Note" ID="{56d6ccb8-8b1b-485d-9fb8-ee4833bca05d}" SourceID="{{listid:Courses}}" StaticName="ImageBase64" ColName="ntext3" RowOrdinal="0" />
             <Field DisplayName="LearnerAppLink" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="LearnerAppLink" Title="LearnerAppLink" Type="Text" ID="{e63df1eb-52d7-4df2-84af-60857091476b}" SourceID="{{listid:Courses}}" StaticName="LearnerAppLink" ColName="nvarchar7" RowOrdinal="0" />
             <Field AppendOnly="FALSE" DisplayName="CourseImgBase64" Format="Dropdown" IsModern="TRUE" IsolateStyles="FALSE" Name="CourseImgBase64" RichText="FALSE" RichTextMode="Compatible" Title="CourseImgBase64" Type="Note" ID="{4ea5bd69-03b2-4f3f-b42c-13367fd398f1}" SourceID="{{listid:Courses}}" StaticName="CourseImgBase64" ColName="ntext2" RowOrdinal="0" />
+                    <Field DisplayName="IntroductionChannel" Format="Dropdown" IsModern="TRUE"  Name="IntroductionChannel" Title="IntroductionChannel" Type="Text" ID="{e63df1eb-52d7-4df2-84af-60857091476c}" SourceID="{{listid:Courses}}" StaticName="IntroductionChannel" ColName="nvarchar8" RowOrdinal="0" />
+          <Field DisplayName="IntroductionChannelID" Format="Dropdown" IsModern="TRUE"  Name="IntroductionChannelID" Title="IntroductionChannelID" Type="Text" ID="{e63df1eb-52d7-4df2-84af-60857091476d}" SourceID="{{listid:Courses}}" StaticName="IntroductionChannelID" ColName="nvarchar9" RowOrdinal="0" />
+          
           </pnp:Fields>
           <pnp:Webhooks>
             <pnp:Webhook ServerNotificationUrl="https://westeurope0.pushnp.svc.ms/notifications?token=96ec5b49-1b4b-4221-afdd-b83cce91197a" ExpiresInDays="1" />
